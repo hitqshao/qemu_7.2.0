@@ -169,3 +169,12 @@ Information on additional methods of contacting the community can be
 found online via the QEMU website:
 
 * `<https://wiki.qemu.org/Contribute/StartHere>`_
+
+Profile
+=======
+
+Take spec2017 gcc program for example
+
+cd build;
+make;make plugin;
+$qemu_path/build/qemu-aarch64 -plugin $qemu_path/contrib/plugins/libcache_inst.so,dcachesize=1048576,dassoc=64,dblksize=64   -d plugin -D qemu_gcc_1MB.log  cpugcc_r_base.aarch64test-64 gcc-pp.c -O3 -finline-limit=0 -fif-conversion -fif-conversion2 -o gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.s > gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.out 2>> gcc-pp.opts-O3_-finline-limit_0_-fif-conversion_-fif-conversion2.err;
